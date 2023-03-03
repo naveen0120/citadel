@@ -1,0 +1,51 @@
+<legend style="text-align: center;">Create Employee</legend>
+<div class="container">
+    
+    <form>
+      <div class="row">
+      <div class="col-md-6">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="name" [(ngModel)] = "employeeForm.name" [ngModelOptions]="{standalone:true}" class="form-control" id="txtName" />
+      </div> 
+      <div class="col-md-6">
+        <label for="txtDesignation" class="form-label">Designation</label>
+        <input type="text" name="price"  [(ngModel)] = "employeeForm.designation" class="form-control" id="txtDesignation" />
+      </div>
+      <div class="col-md-6">
+        <label for="txtSalary" class="form-label">Salary</label>
+        <input type="number" name="salary"  [(ngModel)] = "employeeForm.salary" class="form-control" id="txtSalary" />
+      </div>
+      
+      <div class="col-md-6">
+        <label for="txtEmail" class="form-label">Email</label>
+        <input type="email" name="email" [(ngModel)] = "employeeForm.email" class="form-control" id="txtEmail" />
+      </div>
+      <div class="col-md-6">
+        <label for="txtPhone" class="form-label">Mobile</label>
+        <input type="text" name="phone" [(ngModel)] = "employeeForm.phone" class="form-control" id="txtPhone" />
+      </div>
+      <div class="col-md-6">
+        <label for="txtWorkExperience" class="form-label">Work Experience</label>
+        <select name="experience"  [(ngModel)] = "employeeForm.experience" class="form-control" id="txtExperience">
+          <option value="fresher">Fresher</option>
+          <option value="1 Years">1 Years</option>
+          <option value="2 Years">2 Years</option>
+          <option value="3 Years">3 Years</option>
+          <option value="4+ Years">4+ Years</option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label for="txtWorkstatus" class="form-label">Task Status</label>
+        <select name="taskstatus" [(ngModel)]="employeeForm.taskstatus" class="form-control"  id="txtStatus">
+          <option value="..."></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+      <button class="button-55" [disabled]="employeeForm.name===''" type="button" (click)="create()">ADD</button>
+    </div>
+    </div>
+    </form>
+</div>

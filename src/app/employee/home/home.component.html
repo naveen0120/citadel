@@ -1,0 +1,142 @@
+
+<h2 style="text-align: center;">Dashboard</h2>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-4">
+      <button type="button" class="shape" (click)="open(mymodal)">
+        <h4 style="font-family: sans-serif;">Salary > 30000 </h4> 
+        <p style="font-size:50px;"> {{ getCount() }}</p> 
+      </button>
+      </div>
+
+      <div class="col-lg-4">
+        <button type="button" class="shape" (click)="open2(mymodal2)">
+        <h4 style="font-family: sans-serif;"> Task Completed</h4> 
+          <p style="font-size:50px;">{{getCount2()}}</p>
+        </button>
+      </div>
+  </div>
+</div>
+
+
+
+<h2 style="text-align: center;">List of all Employees</h2>
+<div class="container">
+<div class="card-group">
+  <ng-container>
+    <div *ngFor="let item of allEmployee">
+      <div class="card">
+        <div class="card-header">
+         <h5 style="text-align: center;"> {{ item.name }}</h5>
+        </div>
+
+        <div class="card-body">
+          <p class="fon">
+            <span class="title">Designation : </span><span>{{ item.designation }}</span>
+          </p>
+          <p class="fon">
+            <span class="title">Salary : </span><span >{{ item.salary }}</span>
+          </p>
+          
+          
+          <p class="fon">
+            <span class="title">Task Status :</span><span>{{ item.taskstatus }}</span>
+          </p>
+          <p class="fon">
+            <span class="title">Experience : </span><span>{{ item.experience }}</span>
+          </p>
+          <a class="btn btn-warning" [routerLink]="['/employee/edit', item.id]"
+            >Edit</a
+          >
+          <button
+            type="button"
+            (click)="openDeleteModal(item.id)"
+            class="btn btn-danger"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+</div>
+
+<div class="row mt-2">
+  <div class="col col-md-4 offset-md-4">
+    <a class="book" routerLink="/employee/create">Create</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Delete  Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Are you sure to delete the item?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Salary greater than 30000</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p *ngFor="let person of findSalary(allEmployee)">{{ person.name }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Are you sure to delete the item?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #mymodal2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Task Completed</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p *ngFor="let person of findStatus(allEmployee)">{{ person.name }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+

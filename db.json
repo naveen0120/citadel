@@ -1,0 +1,64 @@
+{
+  "Employee": [
+    {
+      "id": 1,
+      "name": "Naveenkumar",
+      "designation": "Full Stack",
+      "salary": 35000,
+      "email": "",
+      "phone": "",
+      "experience": "2 Years",
+      "taskstatus": "No"
+    },
+    {
+      "id": 2,
+      "name": "priya",
+      "designation": "python",
+      "salary": 36000,
+      "email": "",
+      "phone": "",
+      "experience": "3 Years",
+      "taskstatus": "No"
+    },
+    {
+      "id": 3,
+      "name": "ram",
+      "designation": "java",
+      "salary": 18000,
+      "email": "",
+      "phone": "",
+      "experience": "fresher",
+      "taskstatus": "No"
+    },
+    {
+      "id": 4,
+      "name": "domine",
+      "designation": "python",
+      "salary": 36000,
+      "email": "",
+      "phone": "",
+      "experience": "2 Years",
+      "taskstatus": "Yes"
+    },
+    {
+      "id": 5,
+      "name": "unknown",
+      "designation": "mern stack",
+      "salary": 35000,
+      "email": "",
+      "phone": "",
+      "experience": "2 Years",
+      "taskstatus": "Yes"
+    },
+    {
+      "id": 6,
+      "name": "Naveenkumar",
+      "designation": "",
+      "salary": 32000,
+      "email": "",
+      "phone": "",
+      "experience": "2 Years",
+      "taskstatus": "Yes"
+    }
+  ]
+}
